@@ -2,7 +2,7 @@ import random
 import gym
 import matplotlib.pyplot as plt
 import numpy as np
-
+#https://towardsdatascience.com/mc-control-methods-50c018271553
 env = gym.make("FrozenLake-v0")
 random.seed(0)
 np.random.seed(0)
