@@ -55,7 +55,5 @@ ax2.legend()
 ax3.legend()
 ax4.legend()
 
-
-
-plt.legend()
+fig.savefig('results.png', dpi=fig.dpi)
 plt.show()
