@@ -23,9 +23,10 @@ mcresults = mccontrol.play()
 
 
 best_epsilon  = {}
-best_epsilon["qlearning"] = max(qresults, key=lambda k: np.amax(qresults[k]))
-best_epsilon["sarsa"] = max(sarsaresults, key=lambda k: np.amax(sarsaresults[k]))
-best_epsilon["mcresults"] = max(mcresults, key=lambda k: np.amax(mcresults[k]))
+#get best epsilon for every algo
+best_epsilon["qlearning"] = max(qresults, key=lambda k: np.sum(qresults[k]))
+best_epsilon["sarsa"] = max(sarsaresults, key=lambda k: np.sum(sarsaresults[k]))
+best_epsilon["mcresults"] = max(mcresults, key=lambda k: np.sum(mcresults[k]))
 
 
 fig, (ax1, ax2, ax3, ax4) = plt.subplots(4, figsize=(7,10))
@@ -54,6 +55,5 @@ ax1.legend()
 ax2.legend()
 ax3.legend()
 ax4.legend()
-
 fig.savefig('results.png', dpi=fig.dpi)
 plt.show()
