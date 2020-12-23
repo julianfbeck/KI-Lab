@@ -88,7 +88,6 @@ class MCControl:
                         q_values[q] += 0.3 * (return_i - q_values[q])
                 total_reward.append(np.cumsum(rewards))
             total_reward = np.array(total_reward)
-            print(total_reward.shape)
 
             total_reward = total_reward.T
             epsilons_array[epsi] = total_reward
