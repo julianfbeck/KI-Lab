@@ -9,7 +9,7 @@ import numpy as np
 epsilons = [0.01, 0.1, 0.5, 1.0]
 no_episodes = 1000
 mean_episodes = 20
-lr = 0.5
+lr = 0.3
 gamma = 0.9
 stats = {1:[0.1, 0.5,], 2:[0.01, 20, 0.5, 1.0], 3:[0.01, 0.1, 0.5, 1.0], 4:[0.01, 0.1, 0.5, 1.0]}
 print(max(stats, key=lambda k: sum(stats[k])))
