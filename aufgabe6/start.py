@@ -10,7 +10,7 @@ epsilons = [0.01, 0.1, 0.5, 1.0]
 no_episodes = 1000
 mean_episodes = 20
 lr = 0.3
-gamma = 0.9
+gamma = 1
 stats = {1:[0.1, 0.5,], 2:[0.01, 20, 0.5, 1.0], 3:[0.01, 0.1, 0.5, 1.0], 4:[0.01, 0.1, 0.5, 1.0]}
 print(max(stats, key=lambda k: sum(stats[k])))
 
@@ -23,10 +23,10 @@ mcresults = mccontrol.play()
 
 
 best_epsilon  = {}
-#get best epsilon for every algo
-best_epsilon["qlearning"] = max(qresults, key=lambda k: np.sum(qresults[k]))
-best_epsilon["sarsa"] = max(sarsaresults, key=lambda k: np.sum(sarsaresults[k]))
-best_epsilon["mcresults"] = max(mcresults, key=lambda k: np.sum(mcresults[k]))
+#get best epsilon for every algo -> NP max not correct yet
+best_epsilon["qlearning"] = max(qresults, key=lambda k: np.max(qresults[k]))
+best_epsilon["sarsa"] = max(sarsaresults, key=lambda k: np.max(sarsaresults[k]))
+best_epsilon["mcresults"] = max(mcresults, key=lambda k: np.max(mcresults[k]))
 
 
 fig, (ax1, ax2, ax3, ax4) = plt.subplots(4, figsize=(7,10))
