@@ -78,7 +78,7 @@ class MCControl:
                 rewards = []
                 q_values = self.init_q()
                 for i in range(0, self.no_episodes):
-                    s, r = self.play_episode(q_values, epsilon=e)
+                    s, r = self.play_episode(q_values, epsilon=epsi)
                     # Calculate empirical return Gt in every state that was visited.
                     rewards.append(sum(r))
                     # Calculate V(s) for every state by aggregating the empirical returns received in s.
